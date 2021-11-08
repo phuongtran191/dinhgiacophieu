@@ -16,7 +16,7 @@ h2 {
 }
 
 .container {
-  width: 50%;
+  width: 50% !important;
   padding: 1rem;
 }
 
@@ -37,5 +37,5 @@ button#valuate {
 }
 
 div#result {
-  padding-left: 2rem;
+  padding: 2rem;
 }
