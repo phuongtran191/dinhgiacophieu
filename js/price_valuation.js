@@ -8,6 +8,9 @@ function validate() {
 }
 
 function numberWithCommas(x) {
+  if (x.indexOf(".") !== -1) {
+    return x.toString().replace(".", ",");
+  }
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
@@ -17,14 +20,13 @@ function calculate() {
   let in3 = parseFloat($("income3").value);
   let in4 = parseFloat($("income4").value);
   let vol = parseInt($("volume").value.replace(/,/g, ''));
-  console.log("🚀 ~ file: price_valuation.js ~ line 22 ~ calculate ~ vol", vol)
   let pe1 = parseFloat($("pe1").value);
   let pe2 = parseFloat($("pe2").value);
   // Do calculate
   const EPS = ((in1 + in2 + in3 + in4)*Math.pow(10, 9)/vol).toFixed(3);
   let price1 = 0, price2 = 0;
-  price1 = pe1*EPS*1000;
-  price2 = pe2*EPS*1000;
+  price1 = pe1*EPS;
+  price2 = pe2*EPS;
   // Format number VNĐ
   const price1String = (Math.round(price1/100)*100).toLocaleString();
   const price2String = (Math.round(price2/100)*100).toLocaleString();

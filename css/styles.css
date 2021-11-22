@@ -20,8 +20,9 @@ p {
   padding-right: 6rem;
   margin-bottom: 0;
   font-style: italic;
+  font-size: 0.85rem;
   text-decoration: underline;
-  color: blue;
+  /* color: blue; */
 }
 
 .container {
